@@ -1,0 +1,58 @@
+{
+  "_comment": "Per-site rules. Matched by hostname suffix, longest match wins. 'profile' selects a header set. 'cookie' is sent as a Cookie header (e.g. consent/bot cookies). 'removeSelectors' are CSS selectors stripped before extraction. 'archiveFirst' skips extraction and goes straight to the archive fallback. Start with common sites; grow over time.",
+  "profiles": {
+    "browser": {
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+    },
+    "googlebot": {
+      "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "Referer": "https://www.google.com/",
+      "X-Forwarded-For": "66.249.66.1"
+    },
+    "bingbot": {
+      "User-Agent": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+      "Referer": "https://www.bing.com/"
+    },
+    "facebook": {
+      "User-Agent": "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
+    },
+    "mobile": {
+      "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36",
+      "Referer": "https://www.google.com/"
+    }
+  },
+  "default": { "profile": "googlebot" },
+  "sites": {
+    "wired.com": { "profile": "googlebot" },
+    "businessinsider.com": { "profile": "googlebot" },
+    "theatlantic.com": { "profile": "googlebot" },
+    "latimes.com": { "profile": "googlebot" },
+    "bostonglobe.com": { "profile": "googlebot" },
+    "nymag.com": { "profile": "googlebot" },
+    "vulture.com": { "profile": "googlebot" },
+    "theverge.com": { "profile": "googlebot" },
+    "technologyreview.com": { "profile": "googlebot" },
+    "newscientist.com": { "profile": "googlebot" },
+    "foreignpolicy.com": { "profile": "googlebot" },
+    "foreignaffairs.com": { "profile": "googlebot" },
+    "scientificamerican.com": { "profile": "googlebot" },
+    "fortune.com": { "profile": "googlebot" },
+    "inc.com": { "profile": "googlebot" },
+    "fastcompany.com": { "profile": "googlebot" },
+    "hbr.org": { "profile": "googlebot" },
+    "nationalgeographic.com": { "profile": "googlebot" },
+    "vanityfair.com": { "profile": "googlebot" },
+    "gq.com": { "profile": "googlebot" },
+    "newyorker.com": { "profile": "googlebot" },
+    "medium.com": { "profile": "googlebot" },
+    "nytimes.com": { "profile": "googlebot", "archiveFirst": true },
+    "wsj.com": { "profile": "googlebot", "archiveFirst": true },
+    "washingtonpost.com": { "profile": "googlebot", "archiveFirst": true },
+    "ft.com": { "archiveFirst": true },
+    "bloomberg.com": { "archiveFirst": true },
+    "economist.com": { "archiveFirst": true },
+    "barrons.com": { "archiveFirst": true },
+    "thetimes.com": { "archiveFirst": true },
+    "telegraph.co.uk": { "archiveFirst": true }
+  }
+}
