@@ -1,0 +1,93 @@
+:root {
+  --bg: #0e1116;
+  --bg2: #161b22;
+  --fg: #e8e6e1;
+  --muted: #8a8b9e;
+  --accent: #3f95ff;
+  --line: #2a2f3a;
+  --card: #141922;
+  --radius: 14px;
+  --maxw: 720px;
+}
+:root[data-theme="light"] {
+  --bg: #faf9f6;
+  --bg2: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --accent: #1a66d6;
+  --line: #e4e2db;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; background: var(--bg); z-index: 5;
+}
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.actions { display: flex; gap: 6px; }
+.icon-btn {
+  background: none; border: 1px solid var(--line); color: var(--fg);
+  width: 38px; height: 38px; border-radius: 10px; font-size: 18px; cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--accent); }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 20px 16px 80px; }
+.reader-form { display: flex; gap: 8px; }
+#urlInput {
+  flex: 1; padding: 13px 14px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--bg2); color: var(--fg); font-size: 16px;
+}
+#urlInput:focus { outline: none; border-color: var(--accent); }
+#readBtn {
+  padding: 0 20px; border: none; border-radius: 10px; background: var(--accent);
+  color: #fff; font-weight: 600; font-size: 16px; cursor: pointer;
+}
+#readBtn:disabled { opacity: .5; cursor: default; }
+.status { margin: 14px 2px; color: var(--muted); }
+.muted { color: var(--muted); }
+.tiny { font-size: 13px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-top: 18px; }
+.fallback h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.fb-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.fb-links a {
+  display: inline-block; padding: 10px 14px; border-radius: 10px;
+  background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 14px;
+}
+.fb-links a.secondary { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.partial { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.article { margin-top: 22px; }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.badge {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 2px 9px;
+}
+#artTitle { font-size: 2rem; line-height: 1.2; margin: 6px 0 4px; letter-spacing: -.01em; }
+.byline { color: var(--muted); margin: 0 0 10px; }
+.article-body { font-size: 1.12rem; line-height: 1.75; }
+.article-body p { margin: 0 0 1.1em; }
+.article-body h2, .article-body h3 { line-height: 1.3; margin: 1.4em 0 .5em; }
+.article-body img { max-width: 100%; height: auto; border-radius: 10px; display: block; margin: 1em auto; }
+.article-body figure { margin: 1.2em 0; }
+.article-body figcaption { font-size: .9rem; color: var(--muted); text-align: center; }
+.article-body a { color: var(--accent); }
+.article-body blockquote { margin: 1.2em 0; padding-left: 1em; border-left: 3px solid var(--line); color: var(--muted); }
+.article-body pre { overflow: auto; background: var(--bg2); padding: 12px; border-radius: 8px; }
+.intro { margin-top: 28px; }
+dialog.settings { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); color: var(--fg); max-width: 440px; width: calc(100% - 32px); }
+dialog.settings::backdrop { background: rgba(0,0,0,.5); }
+.settings h2 { margin: 0 0 14px; }
+.settings label { display: block; margin-bottom: 14px; font-size: 14px; color: var(--muted); }
+.settings input { width: 100%; margin-top: 6px; padding: 11px; border-radius: 9px; border: 1px solid var(--line); background: var(--bg2); color: var(--fg); font-size: 15px; }
+.settings-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+.settings-actions button { padding: 10px 18px; border-radius: 9px; border: none; font-weight: 600; cursor: pointer; }
+.settings-actions .ghost { background: transparent; border: 1px solid var(--line); color: var(--fg); }
+#saveSettings { background: var(--accent); color: #fff; }
+@media (max-width: 520px) { #artTitle { font-size: 1.6rem; } .wrap { padding-top: 14px; } }

@@ -1,0 +1,18 @@
+# Cloudflare Worker config for remove-paywall.
+#
+# Deploy:   npx wrangler deploy
+# Secret:   npx wrangler secret put UNWALL_TOKEN      (set your private access token)
+# Local:    npx wrangler dev                          (uses .dev.vars for UNWALL_TOKEN)
+#
+name = "remove-paywall"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Optional: restrict which browser origins may call the Worker (defense in depth;
+# the token is the real gate). Comma-separated. Leave unset to reflect any origin.
+# Set your GitHub Pages origin here once you know it, e.g.
+# [vars]
+# ALLOWED_ORIGINS = "https://daeyi.github.io"
+
+[observability]
+enabled = true

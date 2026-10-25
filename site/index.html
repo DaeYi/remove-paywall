@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Remove Paywall</title>
+<meta name="description" content="Paste an article URL and read it in a clean reader view." />
+<meta name="theme-color" content="#0e1116" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="icon.svg" alt="" width="22" height="22" /> <span>Remove Paywall</span></div>
+  <div class="actions">
+    <button id="themeBtn" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <form id="readForm" class="reader-form" autocomplete="off">
+    <input id="urlInput" type="url" inputmode="url" placeholder="Paste an article URL…" aria-label="Article URL" />
+    <button id="readBtn" type="submit">Read</button>
+  </form>
+  <p id="status" class="status" hidden></p>
+
+  <section id="fallback" class="card fallback" hidden>
+    <h2 id="fbTitle">Couldn’t extract this one</h2>
+    <p id="fbMsg" class="muted"></p>
+    <div id="fbLinks" class="fb-links"></div>
+    <div id="fbPartial" class="partial" hidden></div>
+  </section>
+
+  <article id="article" class="article" hidden>
+    <div class="article-meta">
+      <span id="srcBadge" class="badge"></span>
+      <a id="origLink" class="muted" href="#" target="_blank" rel="noopener">original ↗</a>
+    </div>
+    <h1 id="artTitle"></h1>
+    <p id="artByline" class="byline" hidden></p>
+    <div id="artBody" class="article-body"></div>
+  </article>
+
+  <section id="intro" class="intro muted">
+    <p>Paste a news article URL above and read it without the overlay. Hard paywalls fall back to an archived copy.</p>
+    <p class="tiny">First time? Open <b>⚙ Settings</b> and paste your Worker URL and access token.</p>
+  </section>
+</main>
+
+<dialog id="settings" class="settings">
+  <form method="dialog" id="settingsForm">
+    <h2>Settings</h2>
+    <label>Worker URL
+      <input id="setWorker" type="url" placeholder="https://remove-paywall.<you>.workers.dev" />
+    </label>
+    <label>Access token
+      <input id="setToken" type="password" placeholder="your UNWALL_TOKEN" />
+    </label>
+    <p id="bookmarkletWrap" class="tiny muted" hidden>
+      Drag to your bookmarks bar: <a id="bookmarklet" href="#">📖 Unwall this page</a>
+    </p>
+    <div class="settings-actions">
+      <button value="cancel" class="ghost">Close</button>
+      <button id="saveSettings" value="save" type="submit">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
