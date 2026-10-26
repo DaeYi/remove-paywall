@@ -8,11 +8,10 @@ name = "remove-paywall"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
-# Optional: restrict which browser origins may call the Worker (defense in depth;
-# the token is the real gate). Comma-separated. Leave unset to reflect any origin.
-# Set your GitHub Pages origin here once you know it, e.g.
-# [vars]
-# ALLOWED_ORIGINS = "https://daeyi.github.io"
+# Restrict which browser origins may call the Worker (defense in depth; the
+# token is the real gate). Comma-separated. Remove to reflect any origin.
+[vars]
+ALLOWED_ORIGINS = "https://daeyi.github.io"
 
 [observability]
 enabled = true
