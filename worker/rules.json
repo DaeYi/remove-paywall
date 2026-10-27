@@ -25,7 +25,7 @@
   "sites": {
     "wired.com": { "profile": "googlebot" },
     "businessinsider.com": { "profile": "googlebot" },
-    "theatlantic.com": { "profile": "googlebot" },
+    "theatlantic.com": { "archiveFirst": true },
     "latimes.com": { "profile": "googlebot" },
     "bostonglobe.com": { "profile": "googlebot" },
     "nymag.com": { "profile": "googlebot" },

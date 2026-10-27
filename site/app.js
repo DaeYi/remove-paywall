@@ -87,6 +87,7 @@ function archiveButtons(archive, target) {
 
 const REASONS = {
   "archive-first": "This site uses a hard paywall, so we go straight to an archived copy.",
+  blocked: "This site blocked the server’s request — full articles are served only to logged-in or verified browsers. Try an archived copy below.",
   paywalled: "This looks paywalled and the full text wasn’t in the page. Try an archived copy.",
   "insufficient-text": "Couldn’t pull enough readable text (often a page that loads its body with JavaScript). Try an archived copy.",
   "fetch-failed": "The site blocked or dropped the request. Try an archived copy.",
