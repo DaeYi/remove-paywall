@@ -133,7 +133,7 @@ export default {
     return json(
       {
         ok: false,
-        reason: paywalled ? "paywalled" : "insufficient-text",
+        reason: fr.status >= 400 ? "blocked" : paywalled ? "paywalled" : "insufficient-text",
         status: fr.status,
         url: tu.toString(),
         finalUrl: fr.finalUrl,
